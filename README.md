@@ -56,3 +56,7 @@ git clone https://github.com/Minerva67/sales-video-prompt.git ~/.claude/skills/s
 重启 Claude Code 后，直接描述你的任务就会触发。也可以输入 `/sales-video-prompt` 手动调用。
 
 更多 skill 见 [claude-skills](https://github.com/Minerva67/claude-skills)。
+
+## 许可证
+
+MIT
