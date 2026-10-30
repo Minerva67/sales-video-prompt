@@ -1,8 +1,51 @@
-# sales-video-prompt
+# sales-video-prompt：把难讲清楚的产品，做成给一位客户看的销售视频
 
-Turn a dense, abstract, hard-to-sell product or analysis (trusts, insurance, tax structures, funds, compliance software — anything where the PDF/PPT goes unread) into ONE complete, personalized sales-enablement video prompt for a hybrid generation engine (precision motion graphics + spatial 3D + atmospheric footage). Use whenever the user wants to pitch or explain a complex offering to a SPECIFIC client or prospect as a video — "make a video prompt", "转成视频提示词", "帮客户做个视频", "sales video", "advisor marketing video", "把这个分析/报告/PPT做成视频", personalized pitch film, sales enablement video. Trigger even if they never say "sales" — any request to script a client-facing video about a complex/boring product qualifies.
+信托、保险、税务筹划、基金、合规软件这类产品，PDF 和 PPT 发出去往往没人看完。这个 skill 为一位具体的客户写一条完整的视频生成提示词，用他自己的数字、家庭和事业，讲清楚这个产品对他意味着什么。
 
-一个 Claude Code skill。来自合集 [claude-skills](https://github.com/Minerva67/claude-skills)。
+产品对每个人都一样，客户各不相同。视频的任务不是讲解产品，而是让客户先看到自己的处境，再看到这个产品如何保护他在乎的东西。
+
+## 适合什么时候用
+
+- 复杂、高客单价的产品，客户不读文字材料
+- 要给一位具体的客户做个性化讲解
+- 手上有一份分析报告，想做成客户愿意看完的视频
+
+## 你会拿到什么
+
+一条完整的英文视频生成提示词，可以直接交给同时支持精确图形和实拍质感的混合生成工具。它不是脚本，也不是零散的分镜片段。
+
+视频分六段，时间按重要程度分配（以 5 分钟为例）：
+
+1. **为什么要关注**：用几股叠加的因素重新解释他的处境，而不是用一个吓人的数字
+2. **转折**：他想要的结果是可以实现的
+3. **原理**：真实的门槛、税率和流程。这一段负责建立信任，不做简化
+4. **风险**：最坏情况是什么，以及如何放大收益
+5. **对比**：什么都不做和采用方案，两条线放在同一条时间轴上，数字滚动，最后停在差额上
+6. **结尾**：一个克制的画面，加一句类似「我们已经按你的实际数字算好了，你准备好时随时联系」的话
+
+客户信息（姓名、家庭、关键数字、主要动机）放在单独的字段里。换一位客户，只需要替换这些字段。
+
+## 写作规则
+
+- 旁白说出的每个数字，同一秒画面上都有对应的变化。数据段落中，画面停留不超过约 4 秒。
+- 只用资料里有的数字。推算出来的数字会写明假设，例如年化 6%。
+- 画面以精确的图形动画为主，约占 70%。实拍质感的画面只在开头、转折和结尾少量出现，并且不承载数字。
+- 不用煽情素材，不恭维客户，不制造紧迫感。
+
+视觉方式参考 Ray Dalio 的《How the Economic Machine Works》。
+
+## 怎么用
+
+- 「给这位客户做一支讲遗产税信托的视频 prompt」，附上客户情况和方案
+- 「把这份基金分析做成给某位客户看的 5 分钟视频」
+
+写第一条之前，可以先看 `references/worked-example.md` 里的完整示例：一支讲 1600 万美元遗产税的片子，附有每处选择的理由。
+
+## 包含的文件
+
+- `SKILL.md`
+- `references/worked-example.md`：完整示例和注释
+- `evals/evals.json`：测试用例
 
 ## 安装
 
@@ -10,12 +53,6 @@ Turn a dense, abstract, hard-to-sell product or analysis (trusts, insurance, tax
 git clone https://github.com/Minerva67/sales-video-prompt.git ~/.claude/skills/sales-video-prompt
 ```
 
-装好后在 Claude Code 里输入 `/sales-video-prompt`，或者直接描述任务，符合条件时会自动触发。
+重启 Claude Code 后，直接描述你的任务就会触发。也可以输入 `/sales-video-prompt` 手动调用。
 
-## 文件
-
-```
-SKILL.md
-evals/evals.json
-references/worked-example.md
-```
+更多 skill 见 [claude-skills](https://github.com/Minerva67/claude-skills)。
