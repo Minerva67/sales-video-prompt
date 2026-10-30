@@ -4,6 +4,14 @@
 
 产品对每个人都一样，客户各不相同。视频的任务不是讲解产品，而是让客户先看到自己的处境，再看到这个产品如何保护他在乎的东西。
 
+## 示例
+
+虚构客户：62 岁的广告公司创始人，公司以 1600 万美元出售，面临遗产税。下图是完整示例的开头，包括前四版为什么被否、最终提示词的结构。
+
+完整示例：[references/worked-example.md](references/worked-example.md)
+
+![示例截图](examples/preview.jpg)
+
 ## 适合什么时候用
 
 - 复杂、高客单价的产品，客户不读文字材料
@@ -46,6 +54,7 @@
 - `SKILL.md`
 - `references/worked-example.md`：完整示例和注释
 - `evals/evals.json`：测试用例
+- `examples/`：示例产出和截图
 
 ## 安装
 
